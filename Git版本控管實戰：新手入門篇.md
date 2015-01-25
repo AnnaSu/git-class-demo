@@ -90,13 +90,16 @@
 
 ##DEMO
 
-01 開始使用 Git 用戶端工具 ( 設定環境變數 )
+### 01 開始使用 Git 用戶端工具 ( 設定環境變數 )
 
 <<設定 user.name 與 user.email>>
 
 ```
 git config --global user.name "你的姓名"
 git config --global user.email "你的Email"
+
+git config --global user.name "Anna Su"
+git config --global user.email "newstory0113@gmail.com"
 
 ```
 
@@ -140,7 +143,7 @@ git config --global core.editor notepad.exe
 
 ```
 
-02 建立工作區 (Workspace) 與本地儲存庫 (Local Repository)
+### 02 建立工作區 (Workspace) 與本地儲存庫 (Local Repository)
 
 <<建立工作區>>
 
@@ -172,7 +175,7 @@ git log
 ```
 
 
-03 複製遠端儲存庫 (Remote Repository) 並建立工作區
+### 03 複製遠端儲存庫 (Remote Repository) 並建立工作區
 
 git clone https://github.com/github/gitignore.git
 
@@ -181,21 +184,77 @@ git clone https://github.com/github/gitignore.git
 copy to clipboard
 
 <<複製儲存庫>>
+
+```
 git clone https://github.com/github/gitignore.git
 
-<<設定 user.name 與 user.email>>
-git config --global user.name "你的姓名"
-git config --global user.email "你的Email"
+```
 
 
-練習3：從GitHub 建立新的遠端儲存庫
 
+
+###04 從GitHub 建立新的遠端儲存庫 (Remote Repository)、複製回來 (clone)、建立版本 (commit)、推送上去 (push)
+
+####複製回來 (clone)
+
+```
 git clone https://github.com/AnnaSu/git-class-demo.git
+```
+
+####暫存檔案 (add)
+>加入暫存後，狀態會從Changes not staged for commit變成Changes to be committed
+
+```
+git add . or git add 檔案名稱
+```
+
+####建立版本 (commit)
+
+```
+git commit -m "git notes"
+```
+
+####推送上去 (push)
+
+git remote add remote名稱 remote網址
+
+例如：
+
+```
+git remote add git-class-demo-remote https://github.com/AnnaSu/git-class-demo.git
+```
+
+查看remote列表，確定已正確被加入遠端位置
+
+```
+git remote
+```
+
+git push -u origin（remote名稱） master（目前branch名稱）
+
+
+例如:
+
+```
+git push git-class-demo-remote master
+```
+
 
 
 Remote origin 代表原本clone的位置
 但如果原本clone的位置沒有權限，可以push到另外一個自己的repo
 
+### 05 將本地儲存庫推送到一個遠端儲存庫，並設定 origin 遠端儲存庫位置與設定遠端追蹤分支
+
+
+
+### 06 將本地儲存庫推送到一個已經有版本的遠端儲存庫 (需先 pull 合併後再 push 上去)
+
+***
+pull 遠端有本地沒有，無法push的時候要做pull
+push 本地有遠端沒有
+
+如果兩種情況都存在，就要先pull先更新再進行push進行合併。
 
 
 
