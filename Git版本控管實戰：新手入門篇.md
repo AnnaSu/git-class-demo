@@ -250,6 +250,31 @@ Remote origin 代表原本clone的位置
 
 ### 06 將本地儲存庫推送到一個已經有版本的遠端儲存庫 (需先 pull 合併後再 push 上去)
 
+###  07 額外建立 develop 分支，並在 master 與該分支各建立一個版本，然後將 develop 合併至 master 分支
+
+SHA-1 等於此版本的id，是hash過的結果，全世界的SHA-1值不會重複。
+master分支會指向SHA-1的id
+
+
+#### 建立分支
+
+Command Line
+
+建立新分支 
+```
+git branch <new_branch_name> 
+```
+
+切換分支 
+```
+git checkout <branch_name>
+```
+
+或者也可以建立新分支並且同時切換分支
+```
+git checkout -b <new_branch_name>
+```
+
 ***
 pull 遠端有本地沒有，無法push的時候要做pull
 push 本地有遠端沒有
